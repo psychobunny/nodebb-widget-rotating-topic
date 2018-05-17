@@ -2,9 +2,9 @@
 <div class="slider widget-rotating-topic hide">
     <!-- BEGIN topics -->
     <div>
-        <br /><br />
+        <br />
         <h3><a href="{relative_path}/topic/{topics.slug}">{topics.title}</a></h3>
-        <br /><br />
+        <br />
     </div>
     <!-- END topics -->
 </div>
