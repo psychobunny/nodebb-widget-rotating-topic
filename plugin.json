@@ -1,0 +1,22 @@
+{
+	"id": "nodebb-widget-rotating-topic",
+	"name": "NodeBB Rotating Topic Widget",
+	"description": "Rotating topic of the day widget.",
+	"url": "https://github.com/psychobunny/nodebb-widget-rotating-topic",
+	"library": "./library.js",
+	"hooks": [
+		{
+			"hook": "static:app.load", "method": "init"
+		},
+		{
+			"hook": "filter:widgets.getWidgets", "method": "defineWidgets"
+		},
+		{
+			"hook": "filter:widget.render:rotatingtopic", "method": "renderWidget"
+		}
+	],
+	"templates": "./public/templates",
+	"less": [
+		"public/less/widget.less"
+	]
+}
