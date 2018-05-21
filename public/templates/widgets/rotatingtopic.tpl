@@ -12,11 +12,19 @@
 <p>No new posts.</p>
 <!-- ENDIF count -->
 <script>
-window.addEventListener('load', function () {
-    $('.slider').removeClass('hide').bxSlider({
-        minSlides: 1,
-        maxSlides: 1,
-        pager: true
-    });
-});
+(function() {
+    function loadSlider() {
+        $('.slider').removeClass('hide').bxSlider({
+            minSlides: 1,
+            maxSlides: 1,
+            pager: true
+        });
+    }
+
+    if (typeof $ === 'undefined') {
+        window.addEventListener('load', loadSlider);
+    } else {
+        loadSlider();
+    }
+}());
 </script>
