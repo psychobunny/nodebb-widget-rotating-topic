@@ -55,8 +55,13 @@ Widget.renderWidget = function(widget, callback) {
 					});
 				}
 			} else {
-				key = 'topics:recent';
+				if (widget.data.showRecent) {
+					key = 'topics:recent';
+				} else {
+					return next(null, {topics: []});
+				}
 			}
+			
 			topics.getTopicsFromSet(key, widget.uid, 0, 30, next);
 		},
 		function (data, next) {
