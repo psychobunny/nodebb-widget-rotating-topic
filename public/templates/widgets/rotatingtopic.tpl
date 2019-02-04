@@ -1,16 +1,13 @@
-<!-- IF count -->
 <div class="slider widget-rotating-topic hide">
     <!-- BEGIN topics -->
     <div>
         <br />
-        <h3><a href="{relative_path}/topic/{topics.slug}">{topics.title}</a></h3>
+        <h3><a href="<!-- IF topics.slug -->{relative_path}/topic/{topics.slug}<!-- ELSE -->#<!-- ENDIF topics.slug -->">{topics.title}</a></h3>
         <br />
     </div>
     <!-- END topics -->
 </div>
-<!-- ELSE -->
-<p>No new posts.</p>
-<!-- ENDIF count -->
+
 <script>
 (function() {
     function loadSlider() {
