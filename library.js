@@ -73,7 +73,7 @@ Widget.renderWidget = function(widget, callback) {
 
 			if (!data.topics.length) {
 				return app.render('widgets/rotatingtopic', {
-					count: 0,
+					topics: [{title: 'No new posts.'}],
 					relative_path: nconf.get('relative_path')
 				}, next);
 			}
@@ -108,7 +108,6 @@ Widget.renderWidget = function(widget, callback) {
 
 				app.render('widgets/rotatingtopic', {
 					topics: topics,
-					count: data.topics.length,
 					relative_path: nconf.get('relative_path')
 				}, next);
 			});
