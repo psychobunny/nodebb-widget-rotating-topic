@@ -25,7 +25,7 @@ Widget.init = function(params, callback) {
 };
 
 function getCidsArray(widget) {
-	var cids = widget.data.cid || '';
+	var cids = widget.templateData.cid || '';
 	cids = cids.split(',');
 	cids = cids.map(function (cid) {
 		return parseInt(cid, 10);
