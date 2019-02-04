@@ -25,7 +25,7 @@ Widget.init = function(params, callback) {
 };
 
 function getCidsArray(widget) {
-	var cids = widget.templateData.cid || '';
+	var cids = widget.data.cid || '';
 	cids = cids.split(',');
 	cids = cids.map(function (cid) {
 		return parseInt(cid, 10);
@@ -55,10 +55,14 @@ Widget.renderWidget = function(widget, callback) {
 					});
 				}
 			} else {
-				if (widget.data.showRecent) {
-					key = 'topics:recent';
+				if (widget.templateData.cid) {
+					key = 'cid:' + widget.templateData.cid + ':tids';
 				} else {
-					return next(null, {topics: []});
+					if (widget.data.showRecent) {
+						key = 'topics:recent';
+					} else {
+						return next(null, {topics: []});
+					}
 				}
 			}
 			
