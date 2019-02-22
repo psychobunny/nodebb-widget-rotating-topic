@@ -1,6 +1,6 @@
 {
   "name": "nodebb-widget-rotating-topic",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Rotating topic of the day widget.",
   "main": "library.js",
   "scripts": {
